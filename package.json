@@ -1,7 +1,7 @@
 {
   "name": "lucky-star",
   "version": "0.1.0",
-  "main": "main.js",
+  "main": "src/main.js",
   "private": true,
   "dependencies": {
     "react": "^16.6.3",
@@ -10,7 +10,9 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "react-scripts start && electron .",
+    "start": "concurrently \"npm run page\" \"npm run desktop\"",
+    "page": "react-scripts start",
+    "desktop": "electron .",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -23,5 +25,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "electron": "^3.0.10"
+  }
 }
