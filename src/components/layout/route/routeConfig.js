@@ -1,5 +1,6 @@
 import Home from '../../home/Home';
 import Setting from '../../setting/Setting';
+import List from '../../list/list'
 
 const ROUTE = [
     {
@@ -15,7 +16,7 @@ const ROUTE = [
     {
         path: '/list',
         exact: true,
-        component: Home
+        component: List
     },
     {
         path: '/setting',
@@ -24,4 +25,4 @@ const ROUTE = [
     },
 ];
 
-export default ROUTE
+export default ROUTE;
