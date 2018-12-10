@@ -3,28 +3,25 @@ import {Layout, Menu, Icon} from 'antd'
 import PropTypes from "prop-types";
 import {withRouter} from 'react-router-dom';
 
+import './menu.css';
+
 const {Sider} = Layout;
 class AppMenu extends Component {
 
     static propTypes = {
         history: PropTypes.object.isRequired
-      };
-
-    state = {
-        collapsed: false
-    };
-
-    onCollapse = (collapsed) => {
-        this.setState({collapsed});
     };
 
     changPage = (param) => {
-        const { key } = param;
+        const {key} = param;
         const pathObj = {
             list: '/list',
             setting: 'setting'
         };
-        this.props.history.push(pathObj[key]);
+        this
+            .props
+            .history
+            .push(pathObj[key]);
     };
 
     render() {
@@ -34,15 +31,9 @@ class AppMenu extends Component {
                 overflow: 'none',
                 height: '100vh'
             }}
-                collapsible
-                collapsed={this.state.collapsed}
-                onCollapse={this.onCollapse}>
+                collapsed={true}>
                 <div className="logo"/>
-                <Menu 
-                theme="dark"
-                mode="inline" 
-                onClick={this.changPage}
-                >
+                <Menu theme="dark" mode="inline" onClick={this.changPage}>
                     <Menu.Item key="list">
                         <Icon type="ordered-list"/>
                         <span>
@@ -53,6 +44,12 @@ class AppMenu extends Component {
                         <Icon type="setting"/>
                         <span>
                             Setting
+                        </span>
+                    </Menu.Item>
+                    <Menu.Item key="add">
+                        <Icon type="plus"/>
+                        <span>
+                            Add
                         </span>
                     </Menu.Item>
                 </Menu>

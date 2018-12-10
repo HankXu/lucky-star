@@ -19,8 +19,23 @@ const ROUTE = [
         component: List
     },
     {
+        path: '/activity/:id',
+        exact: true,
+        component: List
+    },
+    {
+        path: '/activity/add',
+        exact: true,
+        component: List
+    },
+    {
         path: '/setting',
-        exact: false,
+        exact: true,
+        component: Setting
+    },
+    {
+        path: '/setting/:id',
+        exact: true,
         component: Setting
     },
 ];
