@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import PropTypes from "prop-types";
 import {Card, List, Button} from 'antd';
 import './list.css'
 
@@ -26,6 +26,10 @@ const data = [
 ];
 class AppList extends Component {
 
+    static propTypes = {
+        history: PropTypes.object.isRequired
+    };
+
     state = {
         loading: false
     };
@@ -48,6 +52,9 @@ class AppList extends Component {
     toSetting = (id, event) => {
         event.stopPropagation();
         // navigate to another page...
+        this.props
+            .history
+            .push(`setting/${id}`);
     }
 
     render() {

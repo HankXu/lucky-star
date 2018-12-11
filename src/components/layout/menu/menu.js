@@ -16,7 +16,7 @@ class AppMenu extends Component {
         const {key} = param;
         const pathObj = {
             list: '/list',
-            setting: 'setting'
+            setting: '/setting'
         };
         this
             .props

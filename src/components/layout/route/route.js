@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import {Route, Switch} from 'react-router-dom';
-import ROUTE from './routeConfig';
+import ROUTE from '../../../routeConfig';
 
 function ConfigedRoute(props) {
     const configs = props.config;
