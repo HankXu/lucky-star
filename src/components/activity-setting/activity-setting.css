@@ -1,0 +1,12 @@
+.page-container {
+    width: 100%;
+}
+.pate-title {
+    padding-left: 24px;
+}
+.form-container {
+    padding: 24px 0;
+    width: 100%;
+    min-height: 600px;
+    background-color: #fff;
+}
