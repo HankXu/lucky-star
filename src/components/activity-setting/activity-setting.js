@@ -1,9 +1,19 @@
 import React, {Component} from 'react'
 
-import {Form, Input, Button, Checkbox} from 'antd';
+import {Form, Input, Button, Checkbox, Radio, Select} from 'antd';
 import './activity-setting.css'
 
 const FormItem = Form.Item;
+const Option = Select.Option;
+
+function Participants(props) {
+    const { list } = props
+    return list.map(item => {
+        return (
+            <Option value={item.id}>{item.name}</Option>
+        );
+    });
+}
 
 class ActivitySettingForm extends Component {
 
@@ -27,6 +37,20 @@ class ActivitySettingForm extends Component {
                 }
             }
         };
+        const participants = [
+            {
+                id: 'p1',
+                name: 'Henri'
+            },
+            {
+                id: 'p2',
+                name: 'Eric'
+            },
+            {
+                id: 'p3',
+                name: 'Jenny'
+            }
+        ]
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
                 <FormItem {...formItemLayout} label="Activity name">
@@ -48,6 +72,37 @@ class ActivitySettingForm extends Component {
                             }
                         ]
                     })(<Input placeholder="Activity description"/>)}
+                </FormItem>
+                <FormItem {...formItemLayout} label="Activity mode">
+                    {getFieldDecorator('mode', {
+                        initialValue: 'repeat',
+                        rules: [
+                            {
+                                required: true,
+                                message: 'Please choose activity mode!'
+                            }
+                        ]
+                    })(
+                        <Radio.Group>
+                            <Radio value="repeat">Repeat</Radio>
+                            <Radio value="single">Single</Radio>
+                        </Radio.Group>
+                    )}
+                </FormItem>
+                <FormItem {...formItemLayout} label="Participants">
+                    {getFieldDecorator('participant', {
+                        rules: [
+                            {
+                                required: true,
+                                message: 'Please select participant for activity!',
+                                type: 'array'
+                            }
+                        ]
+                    })(
+                        <Select mode="multiple" placeholder="Please select participants">
+                            {participants.map(item => <Option value={item.id}>{item.name}</Option>)}
+                        </Select>
+                    )}
                 </FormItem>
             </Form>
         );
