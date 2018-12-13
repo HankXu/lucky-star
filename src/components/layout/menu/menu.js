@@ -30,7 +30,8 @@ class AppMenu extends Component {
         return (
             <Sider
                 style={{
-                overflow: 'none'
+                overflow: 'none',
+                height: '100vh'
             }}
                 collapsed={true}>
                 <div className="logo"/>

@@ -58,6 +58,7 @@ class Participants extends Component {
         ];
         return (
             <Card
+            style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             bodyStyle={{overflow: 'auto'}}
             title="Participant list"
             extra={<a href="#" style={{fontSize: '14px'}}><Icon type="plus" /> Add</a>}>
