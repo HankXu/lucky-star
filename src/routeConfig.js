@@ -2,6 +2,7 @@ import Home from './components/home/Home';
 import Setting from './components/setting/Setting';
 import List from './components/list/list'
 import ActivitySetting from './components/activity-setting/activity-setting';
+import Praticipants from './components/participants/participants';
 
 const ROUTE = [
     {
@@ -38,6 +39,11 @@ const ROUTE = [
         path: '/setting/:id',
         exact: true,
         component: ActivitySetting
+    },
+    {
+        path: '/participants',
+        exact: true,
+        component: Praticipants
     },
 ];
 

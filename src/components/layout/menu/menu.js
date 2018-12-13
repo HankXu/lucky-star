@@ -16,7 +16,9 @@ class AppMenu extends Component {
         const {key} = param;
         const pathObj = {
             list: '/list',
-            setting: '/setting'
+            participants: '/participants',
+            setting: '/setting',
+            add: '/addActivity',
         };
         this
             .props
@@ -35,9 +37,15 @@ class AppMenu extends Component {
                 <div className="logo"/>
                 <Menu theme="dark" mode="inline" onClick={this.changPage}>
                     <Menu.Item key="list">
-                        <Icon type="ordered-list"/>
+                        <Icon type="bars"/>
                         <span>
                             Activity list
+                        </span>
+                    </Menu.Item>
+                    <Menu.Item key="participants">
+                        <Icon type="team"/>
+                        <span>
+                            Participants
                         </span>
                     </Menu.Item>
                     <Menu.Item key="setting">

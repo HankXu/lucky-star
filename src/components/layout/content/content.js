@@ -8,7 +8,7 @@ class AppContent extends Component {
 
     render() {
         return (
-            <Layout>
+            <Layout style={{ overflow: 'auto' }}>
                 <Content>
                     <AppRoute></AppRoute>
                 </Content>
