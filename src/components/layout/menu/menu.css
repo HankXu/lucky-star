@@ -2,3 +2,7 @@
 .ant-menu-submenu-title .anticon {
     font-size: 18px;
 }
+.ant-layout-sider-children {
+    position: fixed;
+    top: 0;
+}

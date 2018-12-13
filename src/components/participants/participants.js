@@ -29,7 +29,7 @@ class Participants extends Component {
             }, {
                 id: 'p2',
                 name: 'Eric',
-                avatar: 'http://5b0988e595225.cdn.sohucs.com/images/20170928/909e63b5dfa64449a59d01212a8ceb1d.jpeg'
+                avatar: 'https://avatars3.githubusercontent.com/u/12154343?s=40&v=4'
             }, {
                 id: 'p3',
                 name: 'Jenny',
@@ -50,6 +50,10 @@ class Participants extends Component {
                 id: 'p7',
                 name: 'Noob',
                 avatar: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+            }, {
+                id: 'p8',
+                name: 'White',
+                avatar: 'http://5b0988e595225.cdn.sohucs.com/images/20170928/909e63b5dfa64449a59d01212a8ceb1d.jpeg'
             }
         ];
         return (
