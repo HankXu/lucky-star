@@ -26,13 +26,18 @@ class Participants extends Component {
         type: 'add'
     };
 
+    /** methods */
     showDrawer = (type) => {
-        console.log(type, this.state);
         this.setState({
           visible: true,
-          type: 'add'
+          type: type
         });
-        console.log(type, this.state);
+    };
+
+    closeDrawer = () => {
+        this.setState({
+          visible: false,
+        });
     };
 
     toSetting = (id, event) => {
@@ -85,7 +90,7 @@ class Participants extends Component {
             style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             bodyStyle={{overflow: 'auto'}}
             title="Participant list"
-            extra={<a href="#" style={{fontSize: '14px'}} onClick={this.showDrawer}><Icon type="plus" /> Add</a>}>
+            extra={<a href="#" style={{fontSize: '14px'}} onClick={(e)=>this.showDrawer('add', e)}><Icon type="plus" /> Add</a>}>
                 <List
                     grid={{
                     gutter: 16,
@@ -98,12 +103,12 @@ class Participants extends Component {
                         <Card
                             hoverable
                             cover={<img alt = "avatar" src = {item.avatar} />}
-                            actions={[<Icon type="edit" />, <Icon type="minus" />]}>
+                            actions={[<Icon type="edit" onClick={(e)=>this.showDrawer('edit', e)} />, <Icon type="minus" />]}>
                             <Meta title={item.name}/>
                         </Card>
                     </List.Item>
                 )}/>
-                <AddParticipants visible={this.state.visible} type={this.state.type} />
+                <AddParticipants visible={this.state.visible} type={this.state.type} onClose={this.closeDrawer}/>
             </Card>
         );
     }
