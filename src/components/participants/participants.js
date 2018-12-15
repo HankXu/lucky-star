@@ -1,7 +1,18 @@
 import React, {Component} from 'react'
 import PropTypes from "prop-types";
-import {List, Card, Icon} from 'antd';
+import {
+    List,
+    Card,
+    Icon,
+    Drawer,
+    Form,
+    Button,
+    Input,
+    Upload,
+    message 
+} from 'antd';
 import './participants.css'
+import AddParticipants from './add';
 
 const {Meta} = Card;
 
@@ -9,6 +20,19 @@ class Participants extends Component {
 
     static propTypes = {
         history: PropTypes.object.isRequired
+    };
+    state = {
+        visible: false,
+        type: 'add'
+    };
+
+    showDrawer = (type) => {
+        console.log(type, this.state);
+        this.setState({
+          visible: true,
+          type: 'add'
+        });
+        console.log(type, this.state);
     };
 
     toSetting = (id, event) => {
@@ -61,7 +85,7 @@ class Participants extends Component {
             style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             bodyStyle={{overflow: 'auto'}}
             title="Participant list"
-            extra={<a href="#" style={{fontSize: '14px'}}><Icon type="plus" /> Add</a>}>
+            extra={<a href="#" style={{fontSize: '14px'}} onClick={this.showDrawer}><Icon type="plus" /> Add</a>}>
                 <List
                     grid={{
                     gutter: 16,
@@ -79,6 +103,7 @@ class Participants extends Component {
                         </Card>
                     </List.Item>
                 )}/>
+                <AddParticipants visible={this.state.visible} type={this.state.type} />
             </Card>
         );
     }
