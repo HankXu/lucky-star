@@ -3,13 +3,7 @@ import PropTypes from "prop-types";
 import {
     List,
     Card,
-    Icon,
-    Drawer,
-    Form,
-    Button,
-    Input,
-    Upload,
-    message 
+    Icon
 } from 'antd';
 import './participants.css'
 import AddParticipants from './add';

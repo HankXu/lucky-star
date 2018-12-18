@@ -18,7 +18,7 @@ class AppMenu extends Component {
             list: '/list',
             participants: '/participants',
             setting: '/setting',
-            add: '/addActivity',
+            add: '/add/activity',
         };
         this
             .props

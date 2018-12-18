@@ -1,7 +1,8 @@
 import Home from './components/home/Home';
 import Setting from './components/setting/Setting';
-import List from './components/list/list'
-import ActivitySetting from './components/activity-setting/activity-setting';
+import List from './components/activity/list/list'
+import ActivitySetting from './components/activity/setting/setting';
+import AddActivity from './components/activity/add/add';
 import Praticipants from './components/participants/participants';
 
 const ROUTE = [
@@ -26,9 +27,9 @@ const ROUTE = [
         component: List
     },
     {
-        path: '/activity/add',
+        path: '/add/activity',
         exact: true,
-        component: List
+        component: AddActivity
     },
     {
         path: '/setting',

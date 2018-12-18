@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
 import {Form, Input, Button, Checkbox, Radio, Select} from 'antd';
-import './activity-setting.css'
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -108,21 +107,6 @@ class ActivitySettingForm extends Component {
         );
     }
 }
-const WrapperForm = Form.create()(ActivitySettingForm);
+const ActivityForm = Form.create()(ActivitySettingForm);
 
-class ActivitySetting extends Component {
-
-    render() {
-        return (
-            <div className="page-container">
-                <h2 className="pate-title">
-                    Activity Setting
-                </h2>
-                <div className="form-container">
-                    <WrapperForm/>
-                </div>
-            </div>
-        );
-    }
-}
-export default ActivitySetting;
+export default ActivityForm;

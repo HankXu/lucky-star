@@ -1,16 +1,12 @@
 import React, {Component} from 'react'
-import PropTypes from "prop-types";
 import {
-    Card,
     Icon,
     Drawer,
     Form,
     Button,
     Input,
     Upload,
-    message,
-    Row,
-    Col
+    message
 } from 'antd';
 
 function getBase64(img, callback) {

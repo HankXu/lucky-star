@@ -69,7 +69,7 @@ class AppList extends Component {
                         <Card
                             style={{
                             width: '100%',
-                            marginTop: 4
+                            marginTop: 8
                         }}
                             bodyStyle={{
                             display: 'flex'
