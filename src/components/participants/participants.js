@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import {
     List,
     Card,
-    Icon
+    Icon,
+    Input,
+    Button
 } from 'antd';
 import './participants.css'
 import AddParticipants from './add';
 
 const {Meta} = Card;
+const { Search } = Input;
 
 class Participants extends Component {
 
@@ -46,6 +49,10 @@ class Participants extends Component {
     render() {
         const participants = [
             {
+                id: 'p3',
+                name: 'Jenny',
+                avatar: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+            }, {
                 id: 'p1',
                 name: 'Henri',
                 avatar: 'https://avatars3.githubusercontent.com/u/12154343?s=40&v=4'
@@ -53,10 +60,6 @@ class Participants extends Component {
                 id: 'p2',
                 name: 'Eric',
                 avatar: 'https://avatars3.githubusercontent.com/u/12154343?s=40&v=4'
-            }, {
-                id: 'p3',
-                name: 'Jenny',
-                avatar: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
             }, {
                 id: 'p4',
                 name: 'Alice',
@@ -83,8 +86,17 @@ class Participants extends Component {
             <Card
             style={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             bodyStyle={{overflow: 'auto'}}
-            title="Participant list"
-            extra={<a href="#" style={{fontSize: '14px'}} onClick={(e)=>this.showDrawer('add', e)}><Icon type="plus" /> Add</a>}>
+            >
+            <div className="card-header">
+                <h2>Participants list</h2>
+                <div className="header-action">
+                    <Search
+                        placeholder="input search text"
+                        onSearch={value => console.log(value)}
+                        style={{ width: 200 }}/>
+                    <Button className="add-btn" icon="plus" onClick={(e)=>this.showDrawer('add', e)}>Add</Button>
+                </div>
+            </div>
                 <List
                     grid={{
                     gutter: 16,
