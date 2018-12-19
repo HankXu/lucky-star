@@ -95,10 +95,17 @@ class Participants extends Component {
                     renderItem={(item, index) => (
                     <List.Item>
                         <Card
-                            hoverable
+                            className="item-card"
+                            bordered={false}
                             cover={<img alt = "avatar" src = {item.avatar} />}
-                            actions={[<Icon type="edit" onClick={(e)=>this.showDrawer('edit', e)} />, <Icon type="minus" />]}>
-                            <Meta title={item.name}/>
+                           >
+                            <div className="body-content">
+                                <h3 className="name-title">{item.name}</h3>
+                                <div className="action-container">
+                                <Icon type="edit" title="edit" onClick={(e)=>this.showDrawer('edit', e)} />
+                                <Icon type="delete" title="delete" style={{color: '#ff8a8a'}}/>
+                                </div>
+                            </div>
                         </Card>
                     </List.Item>
                 )}/>
