@@ -9,7 +9,7 @@ class AppContent extends Component {
     render() {
         return (
             <Layout style={{ height: '100%', overflow: 'hidden' }}>
-                <Content style={{ height: '100%'}}>
+                <Content style={{ height: '100%', background: '#f7f8fa'}}>
                     <AppRoute></AppRoute>
                 </Content>
             </Layout>
